@@ -9,6 +9,3 @@ export function menu() {
 
   return div;
 }
-
-const navBar = document.querySelector("#nav-bar");
-navBar.appendChild(menu());

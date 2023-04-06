@@ -7,8 +7,55 @@
     <title>Simple Restaurant</title>
     <script src="main.js" defer></script>
   </head>
+
   <body>
-    <nav id="nav-bar"></nav>
     <div id="content"></div>
+    <div class="tab">
+      <button class="tablinks" onclick="tab(event, 'Home')">Home</button>
+      <button class="tablinks" onclick="tab(event, 'Menu')">Menu</button>
+      <button class="tablinks" onclick="tab(event, 'About')">About</button>
+    </div>
+    <div id="Home" class="tabcontent">
+      <h3>Home</h3>
+      <img
+        src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        alt=""
+      />
+      <p>Best dish in town.</p>
+    </div>
+    <div id="Menu" class="tabcontent">
+      <h3>Menu</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus
+        illo soluta quia ad, facere quaerat fugit doloribus dolor omnis harum
+        animi vitae expedita accusamus corrupti. Incidunt debitis harum quia
+        similique.
+      </p>
+    </div>
+
+    <div id="About" class="tabcontent">
+      <h3>About</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni nesciunt
+        excepturi, rerum veritatis voluptatem accusantium corrupti et
+        perspiciatis ea similique quod, est quas quidem. Blanditiis ab ipsum
+        quia ut placeat.
+      </p>
+    </div>
+    <script>
+      function tab(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+    </script>
   </body>
 </html>
